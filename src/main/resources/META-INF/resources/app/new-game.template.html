@@ -1,14 +1,5 @@
 <div>
     <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-{{alert.type}}" ng-show="alert.show">
-                <ui>
-                    <li ng-repeat="message in alert.messages">{{message}}</li>
-                </ui>
-            </div>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-md-6">
             <div class="col-md-12 col-xs-12">
                 <div class="card">
@@ -64,6 +55,15 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="padding: 10px 30px">
+            <div class="alert alert-{{alert.type}}" ng-show="alert.show">
+                <ui>
+                    <h1 ng-repeat="message in alert.messages">{{message}}</h1>
+                </ui>
             </div>
         </div>
     </div>
