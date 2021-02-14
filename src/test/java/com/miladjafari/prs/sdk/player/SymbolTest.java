@@ -14,32 +14,32 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SymbolTest {
 
     @Test
-    public void testPaperShouldBeatsRockAndShouldNotBeatsScissors() {
+    public void paperShouldBeatsRockAndShouldNotBeatsScissors() {
         assertTrue(PAPER.beats(ROCK));
         assertFalse(PAPER.beats(SCISSORS));
     }
 
     @Test
-    public void testRockShouldBeatsScissorsAndShouldNotBeatsPaper() {
+    public void rockShouldBeatsScissorsAndShouldNotBeatsPaper() {
         assertTrue(ROCK.beats(SCISSORS));
         assertFalse(ROCK.beats(PAPER));
     }
 
     @Test
-    public void testScissorsShouldBestsPaperAndShouldNotBeatsRock() {
+    public void scissorsShouldBestsPaperAndShouldNotBeatsRock() {
         assertTrue(SCISSORS.beats(PAPER));
         assertFalse(SCISSORS.beats(ROCK));
     }
 
     @Test
-    public void testSuccessfullyGetSymbolById() {
+    public void shouldSuccessfullyGetSymbolById() {
         assertEquals(PAPER, Symbol.getSymbolById(1));
         assertEquals(ROCK, Symbol.getSymbolById(2));
         assertEquals(SCISSORS, Symbol.getSymbolById(3));
     }
 
     @Test
-    public void testThrowGameRuntimeExceptionWhenSymbolIdIsInvalid() {
+    public void shouldThrowGameRuntimeExceptionWhenSymbolIdIsInvalid() {
         assertThrows(GameRuntimeException.class, () -> Symbol.getSymbolById(0));
         assertThrows(GameRuntimeException.class, () -> Symbol.getSymbolById(4));
     }

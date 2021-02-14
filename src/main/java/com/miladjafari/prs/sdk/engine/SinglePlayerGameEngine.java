@@ -1,11 +1,11 @@
 package com.miladjafari.prs.sdk.engine;
 
 import com.miladjafari.prs.sdk.dto.GameResultDto;
-import com.miladjafari.prs.sdk.player.Symbol;
 import com.miladjafari.prs.sdk.exception.GameRuntimeException;
 import com.miladjafari.prs.sdk.player.Player;
+import com.miladjafari.prs.sdk.player.Symbol;
 
-public class SinglePlayerGameEngine {
+public class SinglePlayerGameEngine implements GameEngine {
 
     private final String gameId;
     private final Player realPlayer;
@@ -13,12 +13,12 @@ public class SinglePlayerGameEngine {
     private final RandomSymbolSelector computerPlayerSymbolSelector;
 
     public SinglePlayerGameEngine(
-            String roomId,
+            String gameId,
             Player realPlayer,
             Player computerPlayer,
             RandomSymbolSelector computerPlayerSymbolSelector
     ) {
-        this.gameId = roomId;
+        this.gameId = gameId;
         this.realPlayer = realPlayer;
         this.computerPlayer = computerPlayer;
         this.computerPlayerSymbolSelector = computerPlayerSymbolSelector;
