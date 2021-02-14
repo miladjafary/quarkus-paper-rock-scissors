@@ -1,0 +1,70 @@
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-{{alert.type}}" ng-show="alert.show">
+                <ui>
+                    <li ng-repeat="message in alert.messages">{{message}}</li>
+                </ui>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-12 col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="fa fa-list-alt" aria-hidden="true"></span>
+                        Your Score
+                        <span class="badge badge-primary badge-pill">{{board.player.score}}</span>
+                    </div>
+                    <div class="card-body">
+                        <div ng-show="board.player.symbol.visible">
+                            <p class="d-inline-flex p-2">You chose</p>
+                            <button class="btn {{getPlayerChoseClass()}} col-md-3" >
+                                <i class="{{board.player.symbol.icon}}" style="font-size: 2em"></i>
+                                <div>{{board.player.symbol.text}}</div>
+                            </button>
+                            <button class="btn btn-primary col-md-3" ng-click="rematch()">
+                                <i class="fas fa-redo-alt" style="font-size: 2em"></i>
+                                <div>REMATCH</div>
+                            </button>
+                        </div>
+                        <div ng-show="!board.player.symbol.visible">
+                            <p class="d-inline-flex p-2">Take your pick</p>
+                            <button class="btn btn-primary col-md-3" ng-click="play(1)">
+                                <i class="far fa-copy" style="font-size: 2em"></i>
+                                <div>Paper</div>
+                            </button>
+                            <button class="btn btn-primary col-md-3" ng-click="play(2)">
+                                <i class="fas fa-cube" style="font-size: 2em"></i>
+                                <div>Rock</div>
+                            </button>
+                            <button class="btn btn-primary col-md-3" ng-click="play(3)">
+                                <i class="fas fa-cut" style="font-size: 2em"></i>
+                                <div>Scissors</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12 col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="fa fa-list-alt" aria-hidden="true"></span>
+                        Computer Score
+                        <span class="badge badge-primary badge-pill">{{board.computer.score}}</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="d-inline-flex p-2">Computer Chose </p>
+                        <button class="btn {{getComputerChoseClass()}} col-md-3" >
+                            <i class="{{board.computer.symbol.icon}}" style="font-size: 2em"></i>
+                            <div>{{board.computer.symbol.text}}</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

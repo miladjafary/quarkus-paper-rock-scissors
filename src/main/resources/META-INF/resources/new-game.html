@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Font Awesone icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-          crossorigin="anonymous"></link>
-
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+          crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"
             type="application/javascript"></script>
 
+    <script src="app/new-game-component.js"></script>
     <script src="app/game.js"></script>
     <title>Paper-Rock-Scissors</title>
 </head>
@@ -34,16 +35,9 @@
         </ul>
     </div>
 </nav>
-<div id="introPage" class="jumbotron jumbotron-fluid" style="margin-top: 50px">
-    <div class="container">
-        <h1 class="display-4">Welcome To Paper-Rock-Scissors</h1>
-        <hr />
-        <p>Are you ready?</p>
-        <p><a class="btn btn-primary btn-lg" href="new-game.html" role="button">Start New Game &raquo;</a></p>
-    </div>
+<div class="container-fluid " style="margin-top:70px">
+    <newgame></newgame>
 </div>
-
 </div>
-
 </body>
 </html>
