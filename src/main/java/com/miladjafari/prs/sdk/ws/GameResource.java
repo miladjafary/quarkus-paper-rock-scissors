@@ -30,7 +30,7 @@ public class GameResource {
     @POST
     @Path("/games/create/singlePlayer")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createNew(@Context UriInfo uriInfo) {
+    public Response createNewSinglePlayerGame(@Context UriInfo uriInfo) {
         CreateGameResponseDto createGameResponse = gameManagerService.createSinglePlayerGame();
         return Response.created(uriInfo.getBaseUri()).entity(createGameResponse).build();
     }

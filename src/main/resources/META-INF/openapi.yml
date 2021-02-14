@@ -1,0 +1,145 @@
+openapi: 3.0.3
+info:
+  title: Paper-Rock-Scissors game Api Specification
+  version: 1.0.0
+  description: Paper-Rock-Scissors game Api Specification
+paths:
+  /games/create/singlePlayer:
+    post:
+      operationId: createNewSinglePlayerGame
+      summary: Create a new single player game
+      description: Create a new single player game with one real player and a computer player
+      responses:
+        "204":
+          description: |-
+            A new game is created with one real player and a computer player.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateGameResponse'
+
+  /games/{gameId}/{playerId}/play/{symbolId}:
+    put:
+      operationId: play
+      summary: Playing the game by choosing a symbol id
+      description: Enable a player to play the game by choosing a `symbolId`
+      parameters:
+      - name: gameId
+        in: path
+        required: true
+        description: Unique identifier of a game
+        schema:
+          type: string
+      - name: playerId
+        in: path
+        required: true
+        description: Unique identifier of a player which is unique in  the **gameId**
+        schema:
+          type: string
+      - name: symbolId
+        in: path
+        required: true
+        description: |
+          Id of selected symbol. Valid symbol id:
+          [**1 => PAPER**]
+          [**2 => ROCK**]
+          [**3 => SCISSORS**]
+        schema:
+          format: int32
+          type: integer
+          minimum: 1
+          maximum: 3
+      responses:
+        "200":
+          description: The player symbol has been accepted by the game engine and the game result is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameResult'
+        "400":
+          $ref: "#/components/responses/400Error"
+
+
+components:
+  responses:
+    400Error:
+      description: Provides in case of any errors
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    ErrorResponse:
+      type: object
+      title: Error Response
+      description: The standard response model returned in case of an error
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "Could find symbol with id: [5]"
+    CreateGameResponse:
+      type: object
+      title: CreateGameResponse
+      description: |-
+        Return as a response of successful creating a new game
+      properties:
+        gameId:
+          type: string
+          description: Unique identifier of a game
+          example: a55a86c2-6622-4b29-a5af-04ab1a783e30
+        playerId:
+          type: string
+          description: Unique identifier of a player
+          example: 3b04b3f1-1628-41fe-9617-4f9ddd8ec119
+        url:
+          type: string
+          description: link to the game created
+          example: /games/a55a86c2-6622-4b29-a5af-04ab1a783e30
+    Player:
+      type: object
+      title: Player
+      description: Contains game player information of
+      properties:
+        id:
+          type: string
+          description: Unique identifier of player in a game
+          example: a55a86c2-6622-4b29-a5af-04ab1a783e30
+        score:
+          type: integer
+          description: Score of player in a game
+          example: 10
+        symbol:
+          type: string
+          description: Latest selected symbol
+          enum:
+            - PAPER
+            - ROCK
+            - SCISSORS
+          example: PAPER
+    GameResult:
+      type: object
+      title: GameResult
+      description: |-
+        Return as a response of successful playing a symbol
+      properties:
+        gameId:
+          type: string
+          description: Unique identifier of a game
+          example: a55a86c2-6622-4b29-a5af-04ab1a783e30
+        equal:
+          type: boolean
+          required: true
+          description: Return `true` if two players have played the same symbol.
+          example: false
+        winnerPlayerId:
+          type: string
+          description: Unique identifier of winner player.
+          example: 7a1c2458-481e-40ab-b9d5-baae687c4028
+        players:
+          description: List of active players in the game.
+          type: array
+          items:
+            $ref: '#/components/schemas/Player'
+
+
