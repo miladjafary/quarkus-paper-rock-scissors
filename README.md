@@ -12,7 +12,7 @@ The winner is determined by the following schema:
 - Rock beats (blunts) scissors
 - Scissors beats (cuts) paper.
 
-This project is a single player Paper-Rock-Scissors in with a real player can play it with the computer.
+This project is a single player Paper-Rock-Scissors in which a real player can play with the computer.
 
 ## Technical stack
 This game has been developed on Quarkus, which is a Supersonic Subatomic Java Framework.
@@ -54,7 +54,7 @@ You can access to the swaggerui when the project is started in dev mode.
 ```shell script
 mvn compile quarkus:dev
 ```
-Once your application is started, you can go to [http://localhost:8080/q/swagger-ui]() and play with your API.
+Once your application is started, you can go to http://localhost:8080/q/swagger-ui and play with your API.
 
 ## Game SDK
 In this project a game sdk has been developed that is responsible for preparation and rule controlling of the game.

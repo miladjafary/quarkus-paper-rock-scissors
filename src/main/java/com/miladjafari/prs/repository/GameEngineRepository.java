@@ -1,4 +1,4 @@
-package com.miladjafari.prs.sdk.repository;
+package com.miladjafari.prs.repository;
 
 import com.miladjafari.prs.sdk.engine.GameEngine;
 

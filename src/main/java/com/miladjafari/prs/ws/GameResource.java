@@ -1,9 +1,9 @@
-package com.miladjafari.prs.sdk.ws;
+package com.miladjafari.prs.ws;
 
 import com.miladjafari.prs.sdk.dto.CreateGameResponseDto;
 import com.miladjafari.prs.sdk.dto.GameResultDto;
 import com.miladjafari.prs.sdk.exception.GameRuntimeException;
-import com.miladjafari.prs.sdk.service.GameManagerService;
+import com.miladjafari.prs.service.GameManagerService;
 
 import javax.inject.Inject;
 import javax.json.Json;
