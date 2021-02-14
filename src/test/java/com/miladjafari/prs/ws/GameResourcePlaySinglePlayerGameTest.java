@@ -1,4 +1,4 @@
-package com.miladjafari.prs.sdk.ws;
+package com.miladjafari.prs.ws;
 
 import com.miladjafari.prs.sdk.dto.CreateGameResponseDto;
 import io.quarkus.test.junit.QuarkusTest;

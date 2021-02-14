@@ -1,4 +1,4 @@
-package com.miladjafari.prs.sdk.service;
+package com.miladjafari.prs.service;
 
 import com.miladjafari.prs.sdk.dto.CreateGameResponseDto;
 import com.miladjafari.prs.sdk.dto.GameResultDto;
@@ -6,7 +6,7 @@ import com.miladjafari.prs.sdk.engine.GameEngine;
 import com.miladjafari.prs.sdk.engine.SinglePlayerGameEngineBuilder;
 import com.miladjafari.prs.sdk.exception.GameRuntimeException;
 import com.miladjafari.prs.sdk.player.Symbol;
-import com.miladjafari.prs.sdk.repository.GameEngineRepository;
+import com.miladjafari.prs.repository.GameEngineRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
