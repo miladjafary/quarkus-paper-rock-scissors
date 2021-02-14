@@ -1,5 +1,7 @@
-package com.miladjafari.prs.sdk;
+package com.miladjafari.prs.sdk.engine;
 
+import com.miladjafari.prs.sdk.dto.GameResultDto;
+import com.miladjafari.prs.sdk.player.Symbol;
 import com.miladjafari.prs.sdk.exception.GameRuntimeException;
 import com.miladjafari.prs.sdk.player.Player;
 import org.junit.jupiter.api.BeforeEach;

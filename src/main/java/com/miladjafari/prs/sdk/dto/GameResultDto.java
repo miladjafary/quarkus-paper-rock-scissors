@@ -1,4 +1,4 @@
-package com.miladjafari.prs.sdk;
+package com.miladjafari.prs.sdk.dto;
 
 import com.miladjafari.prs.sdk.player.Player;
 

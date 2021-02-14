@@ -1,11 +1,8 @@
 package com.miladjafari.prs.sdk.player;
 
-import com.miladjafari.prs.sdk.Symbol;
-
 import java.util.Objects;
 
 public class Player {
-
     private final String id;
     private Symbol symbol;
     private Integer score = 0;

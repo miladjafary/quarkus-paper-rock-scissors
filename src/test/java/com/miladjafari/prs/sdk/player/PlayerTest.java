@@ -1,6 +1,5 @@
 package com.miladjafari.prs.sdk.player;
 
-import com.miladjafari.prs.sdk.Symbol;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;

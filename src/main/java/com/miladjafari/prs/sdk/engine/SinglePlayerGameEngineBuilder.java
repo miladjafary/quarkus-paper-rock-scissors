@@ -1,4 +1,4 @@
-package com.miladjafari.prs.sdk;
+package com.miladjafari.prs.sdk.engine;
 
 import com.miladjafari.prs.sdk.exception.GameRuntimeException;
 import com.miladjafari.prs.sdk.player.Player;
@@ -6,9 +6,8 @@ import com.miladjafari.prs.sdk.player.Player;
 import java.util.UUID;
 
 public class SinglePlayerGameEngineBuilder {
-
-    public String gameId;
-    public String realPlayerId;
+    private String gameId;
+    private String realPlayerId;
 
     public SinglePlayerGameEngineBuilder gameId(String gameId) {
         this.gameId = gameId;
@@ -21,11 +20,11 @@ public class SinglePlayerGameEngineBuilder {
     }
 
     public SinglePlayerGameEngine build() {
-        if (this.realPlayerId == null || this.realPlayerId.isEmpty()) {
+        if (realPlayerId == null || realPlayerId.trim().isEmpty()) {
             throw new GameRuntimeException("RealPlayerId has not been set");
         }
 
-        if (this.gameId == null) {
+        if (gameId == null || gameId.trim().isEmpty()) {
             throw new GameRuntimeException("GameId has not been set");
         }
 

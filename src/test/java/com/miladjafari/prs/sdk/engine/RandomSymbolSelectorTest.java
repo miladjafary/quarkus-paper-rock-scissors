@@ -1,6 +1,5 @@
-package com.miladjafari.prs.sdk.player;
+package com.miladjafari.prs.sdk.engine;
 
-import com.miladjafari.prs.sdk.RandomSymbolSelector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;

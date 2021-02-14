@@ -1,4 +1,6 @@
-package com.miladjafari.prs.sdk;
+package com.miladjafari.prs.sdk.engine;
+
+import com.miladjafari.prs.sdk.player.Symbol;
 
 import java.util.Random;
 

@@ -1,11 +1,11 @@
-package com.miladjafari.prs.sdk;
+package com.miladjafari.prs.sdk.player;
 
 import com.miladjafari.prs.sdk.exception.GameRuntimeException;
 import org.junit.jupiter.api.Test;
 
-import static com.miladjafari.prs.sdk.Symbol.PAPER;
-import static com.miladjafari.prs.sdk.Symbol.ROCK;
-import static com.miladjafari.prs.sdk.Symbol.SCISSORS;
+import static com.miladjafari.prs.sdk.player.Symbol.PAPER;
+import static com.miladjafari.prs.sdk.player.Symbol.ROCK;
+import static com.miladjafari.prs.sdk.player.Symbol.SCISSORS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;

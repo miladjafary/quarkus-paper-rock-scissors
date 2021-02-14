@@ -1,5 +1,7 @@
-package com.miladjafari.prs.sdk;
+package com.miladjafari.prs.sdk.engine;
 
+import com.miladjafari.prs.sdk.dto.GameResultDto;
+import com.miladjafari.prs.sdk.player.Symbol;
 import com.miladjafari.prs.sdk.exception.GameRuntimeException;
 import com.miladjafari.prs.sdk.player.Player;
 
@@ -31,7 +33,7 @@ public class SinglePlayerGameEngine {
                                                                .addPlayer(computerPlayer)
                                                                .addPlayer(realPlayer);
 
-        if (haveSymbolsEqual(realPlayer, computerPlayer)) {
+        if (haveEqualSymbols(realPlayer, computerPlayer)) {
             gameResultBuilder.equalSymbol();
         } else {
             Player winner = findWinner(realPlayer, computerPlayer);
@@ -41,7 +43,7 @@ public class SinglePlayerGameEngine {
         return gameResultBuilder.build();
     }
 
-    private boolean haveSymbolsEqual(Player realPlayer, Player computerPlayer) {
+    private boolean haveEqualSymbols(Player realPlayer, Player computerPlayer) {
         return realPlayer.getSymbol().equals(computerPlayer.getSymbol());
     }
 
